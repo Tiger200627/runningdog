@@ -36,11 +36,10 @@ Java와 Spring Framwork, MyBatis를 사용했고 프론트는 HTML5/CSS/JS, JSP�
   - 공지사항 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/notice)
   - 공지사항 헤더 부분에 롤링 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/include/header.jsp#L12)
 
-- 콘텐츠 게시판 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/contents)
+- 콘텐츠 게시판 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/contents)<br>
 Python BeautifulSoup으로 데이터를 크롤링 후 Jython 사용하여 자바와 연결<br>
 상식 - ‘종합유기견보호센터’ 에서 상식부분 강아지, 고양이, 기타 크롤링<br>
 오늘의 이슈 - ‘1boon kakao’ 동물 관련 파트너 5명, 최신 순, 인기순 100개 크롤링
-
   - 크롤링하기 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/resources/contents_pythonFiles)
   - 상식 / 이슈 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/issue)
   - 이슈 메인페이지 출력 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/main/main.jsp#L145)
