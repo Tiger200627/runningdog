@@ -111,6 +111,6 @@ https://1boon.kakao.com/petzzi
 >- 자원봉사, 후원, 채팅, 공지사항: <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
 
 ## 7. 업데이트 현황
-- ~~보고서 작성하기~~ (2021/01/01 완료)
+- ~~보고서 작성하기~~ (2021/01/07 완료)
 - ~~ReadMe 작성하기~~  (2021/01/08 완료)
 - AWS에 서버 배포하기
