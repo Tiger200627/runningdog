@@ -79,18 +79,12 @@ CSS 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/mai
 
 사이트 소개 웹 / 모바일
 <img src="https://user-images.githubusercontent.com/67498192/104027481-cc8ee700-520a-11eb-805c-afff54ae898c.png">
-<img src="https://user-images.githubusercontent.com/67498192/104027564-e8928880-520a-11eb-85c8-50f791eb3409.png">
-사이트 소개 아이콘 저작권
-유기동물 주인찾기 : 아이콘 제작자 <a href="https://www.flaticon.com/kr/free-icon/dog_3048404?term=pets&page=2&position=77" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-유기동물 정보 : 아이콘 제작자 <a href="https://www.flaticon.com/kr/free-icon/pets_2809702" title="monkik">monkik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-보호센터 정보 : 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-자원봉사 : 아이콘 제작자 <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-후원 : 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-채팅 : 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-콘텐츠 : <div>아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon">www.flaticon.com</a</div>
-  
-공지사항 : 아이콘 제작자 <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
+<img src="https://user-images.githubusercontent.com/67498192/104027564-e8928880-520a-11eb-85c8-50f791eb3409.png" width="50%">
 
+사이트 소개 아이콘 저작권 from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
+유기동물 주인찾기, 보호센터 정보, 콘텐츠 : <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> <br>
+유기동물 정보 : <a href="https://www.flaticon.com/kr/free-icon/pets_2809702" title="monkik">monkik</a>
+자원봉사, 후원, 채팅, 공지사항: <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
 
 ## 5. 구현 영상
 아직 촬영 전
