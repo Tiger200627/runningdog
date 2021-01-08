@@ -94,7 +94,7 @@ CSS 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/mai
 출처 : [종합 유기견 보호센터](https://www.zooseyo.or.kr/Yu_board/know.html?gubun=f&animal=dog)
 
 >콘텐츠 - 이슈 크롤링
-출처 : [1boon](https://1boon.kakao.com/)<br>
+출처 : [1boon](https://1boon.kakao.com/)
 >- 동그람이(네이버 동물공감판 운영, 관리)
 https://1boon.kakao.com/animalandhuman
 >- 노트펫
@@ -105,7 +105,7 @@ https://1boon.kakao.com/koreadognews
 https://1boon.kakao.com/petzzi
 
 
-> 사이트 소개 아이콘 저작권 from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a><br>
+> 사이트 소개 아이콘 저작권 from [Flaticon](www.flaticon.com)
 >- 유기동물 주인찾기, 보호센터 정보, 콘텐츠 : <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> <br>
 >- 유기동물 정보 : <a href="https://www.flaticon.com/kr/free-icon/pets_2809702" title="monkik">monkik</a><br>
 >- 자원봉사, 후원, 채팅, 공지사항: <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
