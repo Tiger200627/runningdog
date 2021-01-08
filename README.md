@@ -29,28 +29,23 @@ Java와 Spring Framwork, MyBatis를 사용했고 프론트는 HTML5/CSS/JS, JSP�
 
 ## 3. 구현 기능
 `Code, View 클릭시 해당 기능이 있는 코드 위치로 이동합니다`
-- 공지사항 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/notice)
+- 공지사항 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/notice)<br>
 목록, 검색, 페이징, 상세 페이지, 작성, 수정, 삭제, 선택 삭제, 다음 글 이전 글, 첨부파일<br>
 헤더부분에 알림 표시, 한달 이내 작성한 공지사항 롤링처리, 관리자 페이지-공지 관리 
   - 첨부파일 다운로드 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/java/com/kh/runningdog/notice/controller/NoticeFileDownLoadView.java)
   - 공지사항 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/notice)
   - 공지사항 헤더 부분에 롤링 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/include/header.jsp#L12)
 
-- 콘텐츠 게시판 관련 Code
+- 콘텐츠 게시판 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/contents)
 Python BeautifulSoup으로 데이터를 크롤링 후 Jython 사용하여 자바와 연결<br>
 상식 - ‘종합유기견보호센터’ 에서 상식부분 강아지, 고양이, 기타 크롤링<br>
 오늘의 이슈 - ‘1boon kakao’ 동물 관련 파트너 5명, 최신 순, 인기순 100개 크롤링
 
-  - Python BeautifulSoup사용하여 크롤링 Code
-  - 자바에서 파이썬 파일 사용하여 크롤링한 정보 가지고오기 Code
+  - 크롤링하기 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/resources/contents_pythonFiles)
+  - 상식 / 이슈 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/issue)
+  - 이슈 메인페이지 출력 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/main/main.jsp#L145)
 
-  - 상식 목록 View
-  - 상식 상세 View
-  - 이슈 목록 View
-  - 이슈 상세 View
-  - 이슈 메인페이지 출력 View
-
-- 사이트 소개 View
+- 사이트 소개 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/about/aboutView.jsp)
 기존에 제공된 디자인을 바탕으로 반응형 웹 페이지를 구현 CSS
 
 ## 4. 구현 이미지
