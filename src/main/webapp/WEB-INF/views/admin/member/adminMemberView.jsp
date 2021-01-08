@@ -32,12 +32,17 @@
 				<dl class="profile">
 					<dt>
 						<div>
-					        <c:if test="${ selectUser.renameProfile eq null }">
-					        <img src="/runningdog/resources/images/common/userBg.png">
-					        </c:if>        
-					        <c:if test="${ selectUser.renameProfile ne null }">
-					        <img src="/runningdog/resources/images/memberImg/${savePath}${selectUser.renameProfile}"/>
-					        </c:if>
+							<c:if test="${ selectUser.renameProfile eq null }">
+							<img src="/runningdog/resources/images/common/userBg.png"/>
+							</c:if>
+							<c:if test="${ selectUser.renameProfile ne null }">
+								<c:if test="${ selectUser.loginType eq null or selectUser.loginType eq 'facebook' }">
+								<img src="/runningdog/resources/images/memberImg/${selectUser.renameProfile}"/>
+								</c:if>
+								<c:if test="${ selectUser.loginType ne null and selectUser.loginType ne 'facebook' }">
+								<img src="${selectUser.renameProfile}"/>
+								</c:if>
+							</c:if>
 						</div>
 					</dt>
 					<dd>
@@ -78,25 +83,38 @@
                         <tr>
                             <td>아이디(이메일)</td>
                             <td colspan="3">
-	                            <input type="text" name="userId" title="아이디(이메일)" id="userIdChk" class="form-control w80p" placeholder="아이디(이메일)" value="${ selectUser.userId }" readonly/>
+	                            <input type="text" name="userId" title="아이디(이메일)" id="userIdChk" class="form-control w80p" placeholder="아이디(이메일)" value="${ selectUser.userId }" maxlength="40" readonly/>
                             </td>
                         </tr>
                         <tr>
                             <td>프로필 사진</td>
                             <td colspan="3">
-                                <c:if test="${ !empty selectUser.originProfile }">
-								${ selectUser.originProfile } &nbsp;
-								<label><input type="checkbox" name="deleteFlag" value="yes"> 삭제하기</label>
+                            	
+							<c:if test="${ selectUser.renameProfile ne null }">
+								<c:if test="${ selectUser.loginType eq null or selectUser.loginType eq 'facebook' }">
+									<c:if test="${ selectUser.loginType ne 'facebook' }" >
+										${ selectUser.originProfile } &nbsp;
+										<label><input type="checkbox" name="deleteFlag" value="yes"> 삭제하기</label>
+									</c:if>
+									<c:if test="${ selectUser.loginType eq 'facebook' }" >
+										${ selectUser.renameProfile } &nbsp;
+										<label><input type="checkbox" name="deleteFlag" value="yes"> 삭제하기</label>
+									</c:if>
 								</c:if>
-								<c:if test="${ empty selectUser.originProfile }">
+								<c:if test="${ selectUser.loginType ne null and selectUser.loginType ne 'facebook' }">
+								간편로그인 계정의 이미지 사용
+								</c:if>
+							</c:if>
+                            	
+							<c:if test="${ selectUser.renameProfile eq null }">
 								<input type="file" name="profilImage" title="프로필 사진"/>
-								</c:if>
+							</c:if>
                             </td>
                         </tr>
                         <tr>
                             <td>닉네임</td>
                             <td colspan="3">
-                            	<input type="text" name="nickname" title="닉네임" id="nicknameChk" class="form-control w80p" placeholder="닉네임" value="${ selectUser.nickname }"/>
+                            	<input type="text" name="nickname" title="닉네임" id="nicknameChk" class="form-control w80p" placeholder="닉네임" value="${ selectUser.nickname }" maxlength="40"/>
 	                            <p id="nicknameWarning">
 	                                <span></span>
 	                            </p>
@@ -105,7 +123,7 @@
                         <tr>
                             <td>휴대폰번호</td>
                             <td colspan="3" class="tel">
-	                            <input type="tel" name="phone" title="휴대폰번호" id="phoneChk" class="form-control w80p" placeholder="'-' 포함 입력" value="${ selectUser.phone }"/>
+	                            <input type="tel" name="phone" title="휴대폰번호" id="phoneChk" class="form-control w80p" placeholder="'-' 포함 입력" value="${ selectUser.phone }" maxlength="40"/>
                          	    <p id="phoneWarning">
 	                                <span></span>
 	                            </p>
