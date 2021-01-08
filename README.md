@@ -72,6 +72,9 @@ CSS 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/mai
 <img src="https://user-images.githubusercontent.com/67498192/104026551-72d9ed00-5209-11eb-8c38-04f535f96c65.png">
 <img src="https://user-images.githubusercontent.com/67498192/104026900-f398e900-5209-11eb-9986-707e23651f24.png">
 
+사이트 저작권
+출처 : 종합 유기견 보호센터
+
 콘텐츠 - 이슈 / 목록 / 상세 / 관리자 페이지
 <img src="https://user-images.githubusercontent.com/67498192/104026975-13301180-520a-11eb-90fe-d9d6e026b636.png">
 <img src="https://user-images.githubusercontent.com/67498192/104027394-acf7be80-520a-11eb-8e58-ffbf9b05b358.png">
@@ -81,15 +84,34 @@ CSS 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/mai
 <img src="https://user-images.githubusercontent.com/67498192/104027481-cc8ee700-520a-11eb-805c-afff54ae898c.png">
 <img src="https://user-images.githubusercontent.com/67498192/104027564-e8928880-520a-11eb-85c8-50f791eb3409.png" width="50%">
 
-사이트 소개 아이콘 저작권 from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-유기동물 주인찾기, 보호센터 정보, 콘텐츠 : <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> <br>
-유기동물 정보 : <a href="https://www.flaticon.com/kr/free-icon/pets_2809702" title="monkik">monkik</a>
-자원봉사, 후원, 채팅, 공지사항: <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
 
 ## 5. 구현 영상
 아직 촬영 전
 
-## 6. 업데이트 현황
+## 6. 저작권
+>콘텐츠 - 상식 크롤링
+출처 : 종합 유기견 보호센터
+반려동물 상식
+https://www.zooseyo.or.kr/Yu_board/know.html?gubun=f&animal=dog
+
+>콘텐츠 - 이슈 크롤링
+출처 : 1boon https://1boon.kakao.com/<br>
+- 동그람이(네이버 동물공감판 운영, 관리)
+https://1boon.kakao.com/animalandhuman
+- 노트펫
+https://1boon.kakao.com/notepet
+- 한국애견신문
+https://1boon.kakao.com/koreadognews
+- 팻찌
+https://1boon.kakao.com/petzzi
+
+
+> 사이트 소개 아이콘 저작권 from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a><br>
+- 유기동물 주인찾기, 보호센터 정보, 콘텐츠 : <a href="https://www.flaticon.com/kr/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> <br>
+- 유기동물 정보 : <a href="https://www.flaticon.com/kr/free-icon/pets_2809702" title="monkik">monkik</a><br>
+- 자원봉사, 후원, 채팅, 공지사항: <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
+
+## 7. 업데이트 현황
 - ~~보고서 작성하기~~ (2021/01/01 완료)
-- ReadMe 작성하기  (2021/01/08 완료)
+- ~~ReadMe 작성하기~~  (2021/01/08 완료)
 - AWS에 서버 배포하기
