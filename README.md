@@ -35,6 +35,9 @@ Java와 Spring Framwork, MyBatis를 사용했고 프론트는 HTML5/CSS/JS, JSP�
   - 첨부파일 다운로드 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/java/com/kh/runningdog/notice/controller/NoticeFileDownLoadView.java)
   - 공지사항 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/notice)
   - 공지사항 헤더 부분에 롤링 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/include/header.jsp#L12)
+  - 공지사항 관리 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/java/com/kh/runningdog/admin/notice/controller/AdminNoticeController.java) / 
+  [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/admin/userBoard)
+  - 공지사항 js 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/resources/common/js/notice.js)
 
 - 콘텐츠 게시판 관련 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/java/com/kh/runningdog/contents)<br>
 Python BeautifulSoup으로 데이터를 크롤링 후 Jython 사용하여 자바와 연결<br>
@@ -43,8 +46,13 @@ Python BeautifulSoup으로 데이터를 크롤링 후 Jython 사용하여 자바
   - 크롤링하기 [Code](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/resources/contents_pythonFiles)
   - 상식 / 이슈 [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/issue)
   - 이슈 메인페이지 출력 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/main/main.jsp#L145)
+  - 콘텐츠 관리 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/java/com/kh/runningdog/admin/contents/controller/AdminContentsController.java) / 
+  [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/admin/contents)
+  - 이슈 공유하기 js 파일[View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/resources/common/js/issueShare.js)
 
-- 사이트 소개 페이지 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/about/aboutView.jsp)<br>
+
+- 사이트 소개 페이지 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/about/aboutView.jsp) / 
+CSS 파일 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/resources/common/css/about.css)<br>
 기존에 제공된 디자인을 바탕으로 반응형 웹 페이지를 구현 CSS
 
 ## 4. 구현 이미지
