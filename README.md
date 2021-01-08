@@ -48,7 +48,7 @@ Python BeautifulSoup으로 데이터를 크롤링 후 Jython 사용하여 자바
   - 이슈 메인페이지 출력 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/main/main.jsp#L145)
   - 콘텐츠 관리 [Code](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/java/com/kh/runningdog/admin/contents/controller/AdminContentsController.java) / 
   [View](https://github.com/Tiger200627/runningdog/tree/NOTICE5/src/main/webapp/WEB-INF/views/admin/contents)
-  - 이슈 공유하기 js 파일[View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/resources/common/js/issueShare.js)
+  - 이슈 공유하기 js 파일 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/resources/common/js/issueShare.js)
 
 
 - 사이트 소개 페이지 [View](https://github.com/Tiger200627/runningdog/blob/NOTICE5/src/main/webapp/WEB-INF/views/about/aboutView.jsp) / 
