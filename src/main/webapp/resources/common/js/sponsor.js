@@ -11,12 +11,13 @@ $(function(){
          var ssummary = $(this).attr('data-ssummary').replace(/\'/g, "&#39;");
          var simage = $(this).attr('data-simage');
          var scount = $(this).attr('data-scount');
-         var surl = "http://192.168.30.34:9392/runningdog/sdetail.do?sNum=" + sid;
+         var surl = "http://localhost:9392/runningdog/sdetail.do?sNum=" + sid; //망할 카카오톡은 127로 작동이 안됩니다. 그런데 localhost로 하면 모바일에서 작동안됩니다.^^
+         var surl2 = "http://127.0.0.1:9392/runningdog/sdetail.do?sNum=" + sid; //망할 페이스북은 또 local로는 작동이 안됩니다.
          
          var value = "";
          value += "<a href='javascript:snsGos(1, \""+surl+"\", \""+stitle+"\");'><img src='resources/images/snsIcn/sns_naver.png' style='width:30px;' alt='네이버'></a>&nbsp;&nbsp;";
-         value += "<a id='kakao-link-btn' href='javascript:sendLinks("+sid+", \""+stitle+"\", \""+ssummary+"\", \""+simage+"\", "+scount+");'><img src='resources/images/snsIcn/sns_ka.png' style='width:30px' alt='카카오톡'></a>&nbsp;&nbsp;";
-         value += "<a href='javascript:snsGos(3, \""+surl+"\", \""+stitle+"\");'><img src='resources/images/snsIcn/sns_face.png' style='width:30px' alt='페이스북'></a>&nbsp;&nbsp;";
+         value += "<a href='javascript:sendLinks(\""+surl+"\", \""+stitle+"\", \""+ssummary+"\", \""+simage+"\", "+scount+");'><img src='resources/images/snsIcn/sns_ka.png' style='width:30px' alt='카카오톡'></a>&nbsp;&nbsp;";
+         value += "<a href='javascript:snsGos(3, \""+surl2+"\", \""+stitle+"\");'><img src='resources/images/snsIcn/sns_face.png' style='width:30px' alt='페이스북'></a>&nbsp;&nbsp;";
          value += "<a href='javascript:snsGos(4, \""+surl+"\", \""+stitle+"\");'><img src='resources/images/snsIcn/sns_tw.png' style='width:30px' alt='트위터'></a><br>";
          value += "<a href='javascript:CopyUrlToClipboard(\""+surl+"\");' class='urlcopy'>URL 복사</a>";
          return value;
@@ -25,7 +26,7 @@ $(function(){
 
 });
 
-//팝오버 범위 밖 클릭하면 닫기 
+//팝오버 범위 밖 클릭하면 닫기 id='kakao-link-btn' 
 $(document).on('click', function (e) {
     $('[data-toggle="popover"],[data-original-title]').each(function () {
         //the 'is' for buttons that trigger popups
@@ -40,8 +41,6 @@ $(document).on('click', function (e) {
 //url 복사
 function CopyUrlToClipboard(url) {
    //window.document.location.href -> 현재 url정보 얻는 방법
-   //var obShareUrl = "http://192.168.30.34:9392/runningdog/sdetail.do?sNum=" + num;
-   
    var t = document.createElement("textarea");
    document.body.appendChild(t);
    t.value = url;
@@ -53,9 +52,6 @@ function CopyUrlToClipboard(url) {
 }
 
 function snsGos(e, url, title) {
-   //var url = "http://localhost:9392/runningdog/sdetail.do?sNum=" + id;
-   //var url = "http://192.168.30.34:9392/runningdog/sdetail.do?sNum=" + id;
-   
    var loc = "";
    switch(e) {
    case 1 : loc = 'https://share.naver.com/web/shareView.nhn?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title); break; //네이버
@@ -70,29 +66,28 @@ $(function(){
 });
 
 //카카오톡 공유
-function sendLinks(id, title, summary, image, count) {
+function sendLinks(surl, title, summary, image, count) {
   //카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-  Kakao.Link.createDefaultButton({
-    container: '#kakao-link-btn',
+  Kakao.Link.sendDefault({
     objectType: 'feed',
     content: {
       title: title,
       description: summary,
-      imageUrl: 'http://192.168.30.34:9392/runningdog/resources/sponsor/summernoteContent/'+image,
+      imageUrl: 'http://localhost:9392/runningdog/resources/sponsor/summernoteContent/'+image,
       link: {
-        mobileWebUrl: 'http://192.168.30.34:9392/runningdog/sdetail.do?sNum=' + id,
-        webUrl: 'http://192.168.30.34:9392/runningdog/sdetail.do?sNum=' + id
+        mobileWebUrl: surl,
+        webUrl: surl
       }
     },
     social: {
-      commentCount: count
+      viewCount: count
     },
     buttons: [
       {
         title: '자세히 보기',
         link: {
-          mobileWebUrl: 'http://192.168.30.34:9392/runningdog/sdetail.do?sNum=' + id,
-          webUrl: 'http://192.168.30.34:9392/runningdog/sdetail.do?sNum=' + id
+          mobileWebUrl: surl,
+          webUrl: surl
         }
       }
     ]
@@ -149,14 +144,28 @@ $(function(){
    });
 });
 
-//썸머노트 내용 빈칸 확인
+//썸네일 & 썸머노트 내용 빈칸 확인
 $(function(){
-   $("#editor").on('submit', function(e) {
-      if ($('#summernote').summernote('isEmpty')) {
-        alert('내용을 입력해주세요');
-        e.preventDefault();
-      }
+   $("#editor").on('submit', function() {
+	   if($("#wfile").val().length == 0) {
+		   alert("썸네일을 선택해주세요");
+		   return false;
+	   }
+	   if ($('#summernote').summernote('isEmpty') && !($("#wfile").val().length == 0)) {
+		   alert('내용을 입력해주세요');
+		   return false;
+	   }
    });
+});
+
+//수정용 썸네일 빈칸 확인
+$(function(){
+	$("#cucu").on('click', function() {
+		if($("#ufile").val().length == 0) {
+			alert("썸네일을 선택해주세요");
+			return false;
+		}
+	});
 });
 
 //(전체/선택) 삭제
@@ -215,28 +224,13 @@ $(function(){
    });
 });
 
-//썸네일 알림
-$(function(){
-
-	$("#cucu").on("click", function(){
-		if($("#wfile").val().length == 0) {
-			alert("썸네일을 선택해주세요");
-			return false;
-		}
-		/*if($("#showSelect").show() && $("#ufile").val().length == 0){
-			alert("썸네일을 선택해주세요");
-			return false;
-		}*/
-	});
-});
-
 //썸머노트때문에 리셋추가
 function Refresh() {
    $('#summernote').summernote('reset');
    window.location.reload();
 }
 
-//파일삭제되면 파일첨부칸 열림
+//파일삭제되면 파일첨부칸 열리게끔 일단 숨김
 $(document).ready(function() {
    $('#showSelect').hide();
 });
@@ -247,11 +241,12 @@ function showFileSelect(snum) {
       data: {snum},
       type: "post",
       url: 'sfileDel.ad',
-      success: function(){
-         console.log("파일 삭제 성공");
-         
-         $("input[name=sOriginal]").attr("value", "null");
-         $("input[name=sOriginal]").attr("value", "null");
+      success: function(result){
+    	  if(result == "ok") {
+    		  console.log("파일 삭제 성공");
+    		  $("input[name=sOriginal]").attr("value", "null");
+    		  $("input[name=sOriginal]").attr("value", "null");
+    	  }
       },
       error : function(reqest, status, errorData){
          console.log("error code : " + request.status
@@ -264,7 +259,6 @@ function showFileSelect(snum) {
    var originalFile = document.getElementById("ofile");
    files.removeChild(originalFile);
    $('#showSelect').show();
-   
 }
 
 //기부금 영수증
@@ -352,7 +346,7 @@ $(function(){
 
 //후원하기 페이지 연락처 입력란 작성
 $(function(){
-   var phoneRule = /^\d{3}-\d{3,4}-\d{4}$/;   
+   var phoneRule = /^\d{2,3}-\d{3,4}-\d{4}$/;   
    $("input[name='spPhone']").blur(function(){
       if(!phoneRule.test($("input[name='spPhone']").val())) {
          alert("'-'를 입력해주세요.");
@@ -360,3 +354,23 @@ $(function(){
       }
    });
 });
+
+function textlength(text) {
+	var inputText = $(text).val();
+	var inputMax = $(text).prop("maxlength");
+	var j = 0;
+	var count = 0;
+	for(var i = 0; i<inputText.length; i++) {
+		val = escape(inputText.charAt(i).length);
+		if(val == 6) {
+			j++;
+		}
+		j++;
+		if(j <= inputMax) {
+			count++;
+		}
+	}
+	if(j > inputMax) {
+		$(text).val(inputText.substr(0, count));
+	}
+}
