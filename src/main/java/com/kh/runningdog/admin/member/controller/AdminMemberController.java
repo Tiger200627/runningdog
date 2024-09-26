@@ -48,11 +48,6 @@ public class AdminMemberController {
 	
 
 /**************** admin controller start ******************/
-
-//	@RequestMapping("admin.ad")
-//	public String adminMemberPage() {
-//		return "admin/member/allMember";
-//	}
 	
 	@RequestMapping("memberAllList.ad")
 	public String memberAllListPage(Model model, HttpServletRequest request, SessionStatus status) {
@@ -92,13 +87,8 @@ public class AdminMemberController {
 		memberPage.setSearch(search);
 		memberPage.setKeyword(keyword);
 		
-//		if(list.size() > -1) {
 		ArrayList<Member> list = memberService.selectMemberList(memberPage);
 
-		logger.info("list : " + list);
-		logger.info("memberPage : " + memberPage);
-		logger.info("memberSerch : " + memberSerch);
-		
 		model.addAttribute("list", list);
 		model.addAttribute("memberPage", memberPage);
 		return "admin/member/adminMemberAllList";
@@ -308,13 +298,13 @@ public class AdminMemberController {
 					member.setOriginProfile(dateString+ "/" + newOriginProfile);
 					member.setRenameProfile(dateString+ "/" + newRenameProfile);
 
-				} else if (!(originProfile.isEmpty()) && deleteFlag != null && deleteFlag.equals("yes")) {
+				} else if (!(renameProfile.isEmpty()) && deleteFlag != null && deleteFlag.equals("yes")) {
 					
 					member.setOriginProfile(null);
 					member.setRenameProfile(null);
 					new File(savePath + "\\" + renameProfile).delete();
 					
-				} else if (!originProfile.isEmpty() && (newOriginProfile == null || originProfile.equals(newOriginProfile) &&
+				} else if (!renameProfile.isEmpty() && (newOriginProfile == null || originProfile.equals(newOriginProfile) &&
 						new File(savePath+ "\\" + renameProfile).length() == new File(savePath + "\\" + newRenameProfile).length())) {
 
 					member.setOriginProfile(originProfile);

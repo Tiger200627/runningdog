@@ -148,7 +148,7 @@ public class AdminSponsorController {
 	}
 
 	@RequestMapping("sfileDel.ad")
-	public void sUpFileDelete(@RequestParam() int snum, HttpServletRequest request, Sponsor sponsor) {
+	public void sUpFileDelete(@RequestParam() int snum, HttpServletRequest request, HttpServletResponse response, Sponsor sponsor) {
 		String savePath = savePath(request) + "/thumbnail";
 		String[] sNum = new String[]{Integer.toString(snum)};
 		ArrayList<Sponsor> list = sponsorService.selectThumb(sNum);
@@ -158,13 +158,23 @@ public class AdminSponsorController {
 		sponsor = sponsorService.selectOne(snum);
 		sponsor.setsOriginal(null);
 		sponsor.setsRename(null);
-		sponsorService.updateSponsor(sponsor);
+		if(sponsorService.updateSponsor(sponsor) > 0) {
+			PrintWriter out = null;
+			try {
+				out = response.getWriter();
+				out.append("ok");
+				out.flush();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				out.close();
+			}
+		}
 	}
 
 	@RequestMapping(value="supdate.ad", method=RequestMethod.POST)
 	public String sUpdate(Sponsor sponsor, HttpServletRequest request, @RequestParam(name = "upfile", required = false) MultipartFile upfile) {
 		int sNum = sponsor.getsNum();
-		logger.info(Integer.toString(sNum));
 		sponsor.setsAmount(Integer.parseInt(request.getParameter("amount").replaceAll(",", "")));
 
 		if(!upfile.getOriginalFilename().equals("")) {
@@ -179,7 +189,7 @@ public class AdminSponsorController {
 				e.printStackTrace();
 			}
 		}
-
+		
 		int result = sponsorService.updateSponsor(sponsor);
 
 		//--------------------------------------------------
@@ -195,14 +205,14 @@ public class AdminSponsorController {
 			//테이블에 저장되어 있는 내용 이미지 파일명
 			ArrayList<SponsorImage> keepImg = sponsorService.selectImageList(new String[]{Integer.toString(sNum)});
 			ArrayList<String> ilist = new ArrayList<>();
-			for(SponsorImage i : keepImg) {logger.info("테이블 : " + i);
+			for(SponsorImage i : keepImg) {
 				ilist.add(i.getSiName());
 			}
 			//sContent 내용에 존재하는 이미지 파일명 읽어 저장
 			ArrayList<String> clist = new ArrayList<>();
 			Pattern pattern = Pattern.compile("t/(.*?)\"");
 			Matcher matcher = pattern.matcher(sponsor.getsContent());
-			while(matcher.find()) {logger.info("sContent : " + matcher.group(1));
+			while(matcher.find()) {
 				clist.add(matcher.group(1));
 			}
 
@@ -394,7 +404,6 @@ public class AdminSponsorController {
 		//하위의 모든 파일
 		for(File info : FileUtils.listFiles(new File(cFolder), TrueFileFilter.INSTANCE, TrueFileFilter.INSTANCE)) {
 			String inFolder = info.getName(); //서버폴더에 저장된 파일명
-			logger.info(inFolder);
 			if(list.size() > 0) {
 				for(int i=0; i<list.size(); i++) {
 					String realFile = list.get(i).getSiName(); //테이블에 저장된 파일명
