@@ -40,11 +40,11 @@
                     <tbody>
                         <tr>
                             <td>제목</td>
-                            <td><input type="text" name="sTitle" class="form-control w100p" placeholder="제목 입력" required></td>
+                            <td><input onfocus="textlength(this);" type="text" name="sTitle" class="form-control w100p" placeholder="제목 입력" maxlength="18" required></td>
                         </tr>
                         <tr>
                             <td>요약 설명</td>
-                            <td><input type="text" name="sSummary" class="form-control w100p" placeholder="요약 설명 입력" required></td>
+                            <td><input onfocus="textlength(this);" maxlength="40" type="text" name="sSummary" class="form-control w100p" placeholder="요약 설명 입력" required></td>
                         </tr>
                         <tr>
                             <td>목표 금액</td>
@@ -64,7 +64,7 @@
                 <div class="write-btn">
                     <input type="button" class="btn btn-list" value="목록으로" onclick="javascript:location.href='aslist.ad'">
                     <input type="reset" class="btn btn-cancel" value="취소하기" onclick="Refresh(); return false;">
-                    <input type="submit" class="btn btn-success" value="작성하기" id="cucu">
+                    <input type="submit" class="btn btn-success" value="작성하기">
                 </div>
             </div>
             </form>
